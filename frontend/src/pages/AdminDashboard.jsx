@@ -92,7 +92,7 @@ const AdminDashboard = () => {
 
   const handleResetSubmit = async (e) => {
     e.preventDefault();
-    if (resetPassword === 'church2025reset') {
+    if (resetPassword === 'acme2025reset') {
       try {
         const response = await fetch(`${config.api.baseUrl}/api/responses/survey/${selectedSurvey}`, {
           method: 'DELETE',
@@ -132,7 +132,7 @@ const AdminDashboard = () => {
         >
           {surveys.map(survey => (
             <option key={survey.id} value={survey.id}>
-              {survey.name}
+              ACME Widget
             </option>
           ))}
         </select>
@@ -199,34 +199,26 @@ const AdminDashboard = () => {
                   </div>
                 </div>
                 <div className="response-answers">
-                  <div className="answer-item">
-                    <div className="question-text">Age Bracket</div>
-                    <div className="answer-text">{response.ageBracket}</div>
-                  </div>
-                  <div className="answer-item">
-                    <div className="question-text">Preferred Days</div>
-                    <div className="answer-text">
-                      {Array.isArray(response.preferredDays) ? response.preferredDays.join(', ') : response.preferredDays}
+                  <div className="form-row">
+                    <div className="answer-item">
+                      <div className="question-text">Age Bracket</div>
+                      <div className="answer-text">{response.ageBracket}</div>
+                    </div>
+                    <div className="answer-item">
+                      <div className="question-text">Usage Days</div>
+                      <div className="answer-text">
+                        {Array.isArray(response.preferredDays) ? response.preferredDays.join(', ') : response.preferredDays}
+                      </div>
                     </div>
                   </div>
-                  <div className="answer-item">
-                    <div className="question-text">Preferred Time</div>
-                    <div className="answer-text">{response.preferredTime}</div>
-                  </div>
-                  <div className="answer-item">
-                    <div className="question-text">Preferred Suburbs</div>
-                    <div className="answer-text">{response.preferredSuburbs}</div>
-                  </div>
-                  <div className="answer-item">
-                    <div className="question-text">Group Types</div>
-                    <div className="answer-text">
-                      {Array.isArray(response.groupTypes) ? response.groupTypes.join(', ') : response.groupTypes}
+                  <div className="form-row">
+                    <div className="answer-item">
+                      <div className="question-text">Usage Time</div>
+                      <div className="answer-text">{response.preferredTime}</div>
                     </div>
-                  </div>
-                  <div className="answer-item">
-                    <div className="question-text">Study Approach</div>
-                    <div className="answer-text">
-                      {Array.isArray(response.studyApproach) ? response.studyApproach.join(', ') : response.studyApproach}
+                    <div className="answer-item">
+                      <div className="question-text">Store Location</div>
+                      <div className="answer-text">{response.preferredSuburbs}</div>
                     </div>
                   </div>
                 </div>

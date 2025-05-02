@@ -149,13 +149,20 @@
 }
 
 .response-answers {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
 .answer-item {
+  flex: 1;
   background-color: #f8f9fa;
   padding: 1rem;
   border-radius: 4px;

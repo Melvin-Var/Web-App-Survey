@@ -63,8 +63,8 @@ function SurveyList() {
           <p>No surveys found.</p>
         ) : (
           <div className="survey-card">
-            <h2>Church Connect Groups Survey</h2>
-            <p className="survey-subtitle">Help us create the best Connect Groups for our church community</p>
+            <h2>ACME Widget Survey</h2>
+            <p className="survey-subtitle">Share your likes and dislikes of the ACME widget</p>
             <Link to={`/surveys/${surveys[0].id}`}>
               <button className="survey-list-take-button">Take Survey</button>
             </Link>

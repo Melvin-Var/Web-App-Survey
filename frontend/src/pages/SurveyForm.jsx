@@ -15,9 +15,7 @@ function SurveyForm() {
     ageBracket: '',
     preferredDays: [],
     preferredTime: '',
-    preferredSuburbs: '',
-    groupTypes: [],
-    studyApproach: []
+    preferredSuburbs: ''
   });
 
   useEffect(() => {
@@ -95,12 +93,10 @@ function SurveyForm() {
         <button className="back-button" onClick={() => navigate('/')}>Back to Home</button>
       </div>
       <div className="survey-header">
-        <h1>Church Connect Groups Survey</h1>
+        <h1>Acme Widget Survey</h1>
         <div className="survey-subtitle">
-          <p>At the Refuge, Connect Groups are what we call our Home or Bible Study groups.</p>
-          <p>We want to see how we can better serve the needs and circumstances of our Refuge family through the Connect Group network.</p>
-          <p>Please take a few minutes to complete the survey.</p>
-          <p>Blessings,<br />The Refuge Team.</p>
+          <p>At ACME we care about our customers. Thank you for taking the time to complete this survey.</p>
+          <p>-ACME Management</p>
         </div>
       </div>
 
@@ -152,7 +148,7 @@ function SurveyForm() {
         <hr className="question-divider" />
 
         <div className="form-group">
-          <label>Which day(s) of the week would suit you best if you were to attend a Connect Group? (select all that apply)</label>
+          <label>Which days of the week do you use your Widget?</label>
           <div className="checkbox-group">
             {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(day => (
               <label key={day} className="checkbox-label">
@@ -171,7 +167,7 @@ function SurveyForm() {
         <hr className="question-divider" />
 
         <div className="form-group">
-          <label>What time of the day would best suit your circumstances?</label>
+          <label>What time of the day do you use your Widget?</label>
           <div className="radio-group">
             {['Morning', 'Afternoon', 'Evening'].map(time => (
               <label key={time} className="radio-label">
@@ -191,7 +187,7 @@ function SurveyForm() {
         <hr className="question-divider" />
 
         <div className="form-group">
-          <label htmlFor="preferredSuburbs">What would be your preferred suburb(s) for a Connect Group?</label>
+          <label htmlFor="preferredSuburbs">Which suburb did you buy your Widget from?</label>
           <input
             type="text"
             id="preferredSuburbs"
@@ -200,56 +196,6 @@ function SurveyForm() {
             onChange={handleInputChange}
             required
           />
-        </div>
-        <hr className="question-divider" />
-
-        <div className="form-group">
-          <label>Which of the following types of Connect Groups would you prefer attending: (select all that apply)</label>
-          <div className="checkbox-group">
-            {[
-              'Young Peoples Group (teenagers)',
-              'Young Adults group (mixed)',
-              'Young Married Group',
-              'Adult group (mixed)',
-              'Men only group',
-              'Women only group',
-              'Seniors Group (mix)'
-            ].map(type => (
-              <label key={type} className="checkbox-label">
-                <input
-                  type="checkbox"
-                  name="groupTypes"
-                  value={type}
-                  checked={responses.groupTypes.includes(type)}
-                  onChange={handleCheckboxChange}
-                />
-                {type}
-              </label>
-            ))}
-          </div>
-        </div>
-        <hr className="question-divider" />
-
-        <div className="form-group">
-          <label>Which approach(es) would you prefer for Connect Groups: (select all that apply)</label>
-          <div className="checkbox-group">
-            {[
-              'Each Connect Group to study material based on the previous Sunday\'s message',
-              'Each Connect Group to study the same Bible study series',
-              'Each Connect Group free to study Bible Study material that is relevant to the needs and circumstances of their group'
-            ].map(approach => (
-              <label key={approach} className="checkbox-label">
-                <input
-                  type="checkbox"
-                  name="studyApproach"
-                  value={approach}
-                  checked={responses.studyApproach.includes(approach)}
-                  onChange={handleCheckboxChange}
-                />
-                {approach}
-              </label>
-            ))}
-          </div>
         </div>
 
         <button type="submit" className="submit-button">Submit Survey</button>

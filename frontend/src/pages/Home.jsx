@@ -8,8 +8,8 @@ function Home() {
         <Link to="/admin/login" className="admin-link">Admin</Link>
       </div>
       <div className="title-section">
-        <h1>Surveys for The Refuge, Oran Park Baptist Church</h1>
-        <p className="subtitle">Help us understand the needs of our church community</p>
+        <h1>Surveys for ACME Inc</h1>
+        <p className="subtitle">Help us serve your needs better</p>
       </div>
       <div className="home-content">
         <div className="button-container">

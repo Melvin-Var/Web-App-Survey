@@ -139,11 +139,9 @@ router.get('/survey/:surveyId/csv', async (req, res) => {
       { id: 'name', title: 'Name' },
       { id: 'contactNumber', title: 'Contact Number' },
       { id: 'ageBracket', title: 'Age Bracket' },
-      { id: 'preferredDays', title: 'Preferred Days' },
-      { id: 'preferredTime', title: 'Preferred Time' },
-      { id: 'preferredSuburbs', title: 'Preferred Suburbs' },
-      { id: 'groupTypes', title: 'Group Types' },
-      { id: 'studyApproach', title: 'Study Approach' },
+      { id: 'preferredDays', title: 'Usage Days' },
+      { id: 'preferredTime', title: 'Usage Time' },
+      { id: 'preferredSuburbs', title: 'Store Location' },
       { id: 'createdAt', title: 'Submission Date' }
     ];
 
@@ -160,8 +158,6 @@ router.get('/survey/:surveyId/csv', async (req, res) => {
       preferredDays: Array.isArray(response.preferredDays) ? response.preferredDays.join(', ') : '',
       preferredTime: response.preferredTime || '',
       preferredSuburbs: response.preferredSuburbs || '',
-      groupTypes: Array.isArray(response.groupTypes) ? response.groupTypes.join(', ') : '',
-      studyApproach: Array.isArray(response.studyApproach) ? response.studyApproach.join(', ') : '',
       createdAt: response.createdAt ? new Date(response.createdAt).toLocaleString() : ''
     }));
 

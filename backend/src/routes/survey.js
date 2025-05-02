@@ -114,9 +114,9 @@ router.delete('/:id', async (req, res) => {
 router.post('/:id/responses', async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, contactNumber, ageBracket, preferredDays, preferredTime, preferredSuburbs, groupTypes, studyApproach } = req.body;
+    const { name, contactNumber, ageBracket, preferredDays, preferredTime, preferredSuburbs } = req.body;
     
-    console.log('Received survey response:', { id, name, contactNumber, ageBracket, preferredDays, preferredTime, preferredSuburbs, groupTypes, studyApproach });
+    console.log('Received survey response:', { id, name, contactNumber, ageBracket, preferredDays, preferredTime, preferredSuburbs });
 
     // Validate required fields
     if (!name) {
@@ -132,7 +132,7 @@ router.post('/:id/responses', async (req, res) => {
       return res.status(400).json({ error: 'Preferred time is required' });
     }
     if (!preferredSuburbs) {
-      return res.status(400).json({ error: 'Preferred suburbs is required' });
+      return res.status(400).json({ error: 'Store location is required' });
     }
 
     // First verify the survey exists
@@ -151,8 +151,6 @@ router.post('/:id/responses', async (req, res) => {
       preferredDays: Array.isArray(preferredDays) ? preferredDays : [],
       preferredTime,
       preferredSuburbs,
-      groupTypes: Array.isArray(groupTypes) ? groupTypes : [],
-      studyApproach: Array.isArray(studyApproach) ? studyApproach : [],
       createdAt: now
     });
 
