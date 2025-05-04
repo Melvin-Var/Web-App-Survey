@@ -1,9 +1,9 @@
-# Refuge Survey Documentation
+# Survey Documentation
 
 ## Project Structure
 
 ```
-refuge-survey/
+survey/
 ├── backend/                 # Backend service
 │   ├── src/                # Source code
 │   ├── config/             # Configuration files
